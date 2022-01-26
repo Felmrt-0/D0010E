@@ -88,20 +88,20 @@ public class LifeLength {
     }
 
     public static void task3() {
-        System.out.println(iterateF(3,5));
-        System.out.println(iterateF(42,3));
-        System.out.println(iterateF(1,3));
+        System.out.println(iterateF(3, 5));
+        System.out.println(iterateF(42, 3));
+        System.out.println(iterateF(1, 3));
     }
 
     public static void task4() {
-        for(int i = 1; i<=16; i++){
+        for (int i = 1; i <= 16; i++) {
             System.out.println(intsToString(i));
         }
     }
 
     public static void task6() {
-        for(int i = 1; i<=16; i++){
-            System.out.println(recIntsToString(i));
+        for (int i = 1; i <= 16; i++) {
+            System.out.println(recIntsToString(42));
             System.out.println(intsToString(i));
             System.out.println();
         }

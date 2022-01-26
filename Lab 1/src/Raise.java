@@ -27,8 +27,8 @@ public class Raise {
     }
 
     public static void main(String[] args) {
-        double x = 1.5;
-        for (int k = 1; k <= 15; k++) {
+        double x = 1.01;
+        for (int k = 1; k <= 10000; k++) {
             recOneCount = 0;
             recHalfCount = 0;
             System.out.println("RecRaiseOne for x = " + x + " and k = " + k + " = " + recRaiseOne(x, k) + ", and took " + recOneCount + " recursive calls");
