@@ -7,7 +7,7 @@ import java.util.Observable;
 public class Level extends Observable {
 	
 	
-	public boolean place(Room r, int x, int y)  {
+	public void place() {//boolean place(Room r, int x, int y)  {
 		
 	}
 	
