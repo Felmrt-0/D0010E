@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f657e3c6-1cec-4e1e-ad2d-bfeb40d2a46d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab 2/lab2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab 2/lab2/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lab2/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab2/Driver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lab2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab2/level/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab2/level/Level.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab2/level/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab2/level/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +15,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -28,6 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -58,6 +68,8 @@
       <option name="presentableId" value="Default" />
       <updated>1643235575815</updated>
       <workItem from="1643235576885" duration="1023000" />
+      <workItem from="1643849006000" duration="3967000" />
+      <workItem from="1643904178598" duration="600000" />
     </task>
     <servers />
   </component>

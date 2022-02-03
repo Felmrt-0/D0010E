@@ -7,7 +7,12 @@ import java.awt.Color;
 public class Room { 
 	
 	public Room(int dx, int dy, Color color) {
-		
+		Room northWall = null;
+		Room westWall = null;
+		Room eastWall = null;
+		Room southWall = null;
+
+		Color floorColor;
 	}
 
 	public void connectNorthTo(Room r) {
