@@ -6,7 +6,7 @@ import lab2.level.Room;
 
 public class Driver {
 
-	public static void run() {
+	public void run() {
 		System.out.print("This is a print-out from the driver.");
 	}
 
