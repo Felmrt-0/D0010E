@@ -24,7 +24,7 @@ public class Room {
         this.dx = dx;
         this.dy = dy;
         this.floorColor = color;
-        System.out.println(dx + " " + dy + " " + color);
+        //System.out.println(dx + " " + dy + " " + color);
 
     }
 
