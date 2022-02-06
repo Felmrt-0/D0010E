@@ -38,6 +38,10 @@ public class Driver {
 		r5.connectSouthTo(r1);
 		r5.connectWestTo(r3);
 		r5.connectEastTo(r4);
+
+		level.firstLocation(r1);
+
+		LevelGUI screen = new LevelGUI(level, "Hata data");
 	}
 
 }
