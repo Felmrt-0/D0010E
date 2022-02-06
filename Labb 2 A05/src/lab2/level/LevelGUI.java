@@ -60,13 +60,21 @@ public class LevelGUI implements Observer {
       }
       
       // TODO: Draw corridors
-      for (Room room: this.lv.rooms){
+      for (Room room: this.lv.rooms) {
         Color dataGul = new Color(255, 204, 17);
         g.setColor(dataGul);
-        g.drawRect(room.x, room.y+4*(room.height/10), 0, 2*(room.height/10)); //corridor west
-        g.drawRect(room.x + room.width, room.y+4*(room.height/10), 0, 2*(room.height/10)); //corridor east
-        g.drawRect(room.x+4*(room.width/10), room.y, 2*(room.width/10), 0); //corridor north
-        g.drawRect(room.x+4*(room.width/10), room.y+room.height, 2*(room.width/10), 0); //corridor south
+        if (room.westDoor != null) {
+          g.fillRect(room.x, room.y + 4 * (room.height / 10), 3, 2 * (room.height / 10)); //corridor west
+          if (room.eastDoor != null) {
+            g.fillRect(room.x + room.width - 3, room.y + 4 * (room.height / 10), 3, 2 * (room.height / 10)); //corridor east
+          }
+          if (room.northDoor != null) {
+            g.fillRect(room.x + 4 * (room.width / 10), room.y, 2 * (room.width / 10), 3); //corridor north
+          }
+          if (room.southDoor != null) {
+            g.fillRect(room.x + 4 * (room.width / 10), room.y + room.height - 3, 2 * (room.width / 10), 3); //corridor south
+          }
+        }
       }
     }
 
