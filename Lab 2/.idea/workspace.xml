@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f657e3c6-1cec-4e1e-ad2d-bfeb40d2a46d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab 2/lab2/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab 2/lab2/Driver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab 2/lab2/level/LevelGUI$Display$Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab 2/lab2/level/LevelGUI$Display$Listener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab 2/lab2/level/LevelGUI$Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab 2/lab2/level/LevelGUI$Display.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab 2/lab2/level/LevelGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab 2/lab2/level/LevelGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab2/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab2/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab2/level/LevelGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab2/level/LevelGUI.java" afterDir="false" />
-    </list>
+    <list default="true" id="f657e3c6-1cec-4e1e-ad2d-bfeb40d2a46d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab 2 A05" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -71,7 +63,7 @@
       <updated>1643235575815</updated>
       <workItem from="1643235576885" duration="1023000" />
       <workItem from="1643849006000" duration="3967000" />
-      <workItem from="1643904178598" duration="14525000" />
+      <workItem from="1643904178598" duration="14580000" />
     </task>
     <servers />
   </component>
