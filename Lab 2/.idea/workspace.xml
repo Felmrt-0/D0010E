@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f657e3c6-1cec-4e1e-ad2d-bfeb40d2a46d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Labb 2 A05/src/lab2/level/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Labb 2 A05/src/lab2/level/Level.java" afterDir="false" />
-    </list>
+    <list default="true" id="f657e3c6-1cec-4e1e-ad2d-bfeb40d2a46d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Labb 2 A05" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -67,6 +65,7 @@
       <workItem from="1643849006000" duration="3967000" />
       <workItem from="1643904178598" duration="14580000" />
       <workItem from="1644142427796" duration="157000" />
+      <workItem from="1644146111342" duration="15000" />
     </task>
     <servers />
   </component>

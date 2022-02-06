@@ -50,16 +50,20 @@ public class LevelGUI implements Observer {
 
     public void paintComponent(Graphics g) {
       super.paintComponent(g);
+      makeRoom(g);
+      makeCorridor(g);
+    }
 
-      // Draw the rooms
+    private void makeRoom(Graphics g){
       for (Room room: this.lv.rooms) {
         g.setColor(Color.BLACK);
         g.drawRect(room.x, room.y, room.width, room.height);
         g.setColor(room.floorColor);
         g.fillRect(room.x, room.y, room.width, room.height);
       }
-      
-      // TODO: Draw corridors
+    }
+
+    private void makeCorridor(Graphics g){
       for (Room room: this.lv.rooms) {
         Color dataGul = new Color(255, 204, 17);
         g.setColor(dataGul);
