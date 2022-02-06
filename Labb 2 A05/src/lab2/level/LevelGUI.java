@@ -60,7 +60,14 @@ public class LevelGUI implements Observer {
       }
       
       // TODO: Draw corridors
-      g.drawLine(0, 0, 100, 100); //Ritar ett streck:))
+      for (Room room: this.lv.rooms){
+        Color dataGul = new Color(255, 204, 17);
+        g.setColor(dataGul);
+        g.drawRect(room.x, room.y+4*(room.height/10), 0, 2*(room.height/10)); //corridor west
+        g.drawRect(room.x + room.width, room.y+4*(room.height/10), 0, 2*(room.height/10)); //corridor east
+        g.drawRect(room.x+4*(room.width/10), room.y, 2*(room.width/10), 0); //corridor north
+        g.drawRect(room.x+4*(room.width/10), room.y+room.height, 2*(room.width/10), 0); //corridor south
+      }
     }
 
     private class Listener implements KeyListener {

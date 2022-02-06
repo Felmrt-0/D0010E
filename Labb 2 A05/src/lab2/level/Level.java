@@ -21,24 +21,19 @@ public class Level extends Observable {
 
     // Check if room collides with an existing room
     Rectangle newRoomBounds = new Rectangle(x, y, r.width, r.height);
-    boolean collides = false;
     for (Room room: this.rooms) {
       Rectangle roomBounds = new Rectangle(room.x, room.y, room.width, room.height);
       if (newRoomBounds.intersects(roomBounds)) {
-        collides = true;
-        break;
+        return false;
       }
     }
 
-    if (collides) {
-      return false;
-    } else {
       // If it doesn't collide with any existing rooms, add the new room and save its coordinates
       r.x = x;
       r.y = y;
       this.rooms.add(r);
       return true;
-    }
+
   }
 
   public void firstLocation(Room r) {
