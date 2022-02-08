@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="f657e3c6-1cec-4e1e-ad2d-bfeb40d2a46d" name="Changes" comment="" />
+=======
+    <list default="true" id="f657e3c6-1cec-4e1e-ad2d-bfeb40d2a46d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Lab 1/out/production/D0010E Lab 1/LifeLength.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab 1/out/production/D0010E Lab 1/LifeLength.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab 1/out/production/D0010E Lab 1/Raise.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab 1/out/production/D0010E Lab 1/Raise.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab 1/src/LifeLength.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab 1/src/LifeLength.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab 1/src/Raise.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab 1/src/Raise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,11 +71,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1643235575815</updated>
+<<<<<<< Updated upstream
       <workItem from="1643235576885" duration="1023000" />
       <workItem from="1643849006000" duration="3967000" />
       <workItem from="1643904178598" duration="14580000" />
       <workItem from="1644142427796" duration="157000" />
       <workItem from="1644146111342" duration="15000" />
+=======
+      <workItem from="1643235576885" duration="1685000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

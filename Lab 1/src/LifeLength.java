@@ -101,7 +101,7 @@ public class LifeLength {
 
     public static void task6() {
         for (int i = 1; i <= 16; i++) {
-            System.out.println(recIntsToString(42));
+            System.out.println(recIntsToString(i));
             System.out.println(intsToString(i));
             System.out.println();
         }
