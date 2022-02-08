@@ -1,0 +1,9 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "bin/BFTmain.jar",
+        "bin/FIFOmain.jar",
+        "src/BFTmain.jar",
+        "src/FIFOmain.jar"
+    ]
+}
