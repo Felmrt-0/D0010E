@@ -5,7 +5,7 @@ import java.awt.Color;
 import lab2.toolClasses.Vector2;
 
 public class Room {
-  Color floorColor = null;
+  Color floorColor;
   int width;
   int height;
   int x;
@@ -25,7 +25,7 @@ public class Room {
   }
 
   public void connectNorthTo(Room r) {
-    northDoor = r;
+    this.northDoor = r;
   }
 
   public void connectEastTo(Room r) {
@@ -33,14 +33,42 @@ public class Room {
   }
 
   public void connectSouthTo(Room r) {
-    southDoor = r;
+    this.southDoor = r;
   }
 
   public void connectWestTo(Room r) {
     this.westDoor = r;
   }
 
+  public boolean isConnectedNorth() {
+    return this.northDoor != null;
+  }
+  
+  public boolean isConnectedSouth() {
+    return this.southDoor != null;
+  }
+
+  public boolean isConnectedEast() {
+    return this.eastDoor != null;
+  }
+
+  public boolean isConnectedWest() {
+    return this.westDoor != null;
+  }
+
   public Vector2 getSize() {
     return new Vector2(this.width, this.height);
+  }
+
+  public Vector2 getCenter() {
+    return new Vector2(this.x + this.width / 2, this.y + this.height / 2);
+  }
+
+  public float getDistance(Room r) {
+    return this.getCenter().distance(r.getCenter());
+  }
+
+  public Vector2 getDelta(Room r) {
+    return this.getCenter().subtract(r.getCenter());
   }
 }
