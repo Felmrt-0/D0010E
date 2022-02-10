@@ -53,8 +53,8 @@ public class LevelGUI implements Observer {
       super.paintComponent(g);
       makeRoom(g);
       makeCorridor(g);
-      //makePath(g);
-      //makePlayer(g);
+      makePath(g);
+      makePlayer(g);
     }
 
     private void makeRoom(Graphics g) {
