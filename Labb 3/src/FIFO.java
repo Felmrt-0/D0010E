@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
-public class FIFO {
+public class FIFO implements Queue {
     private ArrayList<Object> queue = new ArrayList<Object>();
     private int maximumSize;
 
@@ -9,7 +9,7 @@ public class FIFO {
         return queue.size();
     }
 
-    public int maxSize() { 
+    public int maxSize() {
         return maximumSize;
     }
 
@@ -30,15 +30,16 @@ public class FIFO {
     public boolean equals(Object f) throws ClassCastException {
         if (f.getClass() != this.getClass()) {
             throw new ClassCastException();
-        } else if (this.size() == ((FIFO) f).size()) {
+        }
+
+        if (this.size() == ((FIFO) f).size()) {
             for (int i = 0; i < this.size(); i++) {
-                if ((this.queue.get(i) == null)) {
+                if (this.queue.get(i) == null) {
                     if (((FIFO) f).queue.get(i) != null) {
-                        break;
+                        return false;
                     }
-                }
-                if (!this.queue.get(i).equals(((FIFO) f).queue.get(i))) {
-                    break;
+                } else if (!this.queue.get(i).equals(((FIFO) f).queue.get(i))) {
+                    return false;
                 }
             }
             return true;
@@ -49,8 +50,8 @@ public class FIFO {
     public String toString() {
         String output = "Queue: ";
         for (int i = 0; i < size(); i++) {
-            
-            output += "(" + String.valueOf(i) + ") "; //queue.get(i) istället för i?
+
+            output += "(" + String.valueOf(queue.get(i)) + ") "; // queue.get(i) istället för i?
         }
 
         return output;
