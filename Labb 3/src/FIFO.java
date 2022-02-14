@@ -3,7 +3,7 @@ import java.util.NoSuchElementException;
 
 public class FIFO implements Queue {
     private ArrayList<Object> queue = new ArrayList<Object>();
-    private int maximumSize;
+    private int maximumSize = 0;
 
     public int size() {
         return queue.size();
@@ -51,7 +51,7 @@ public class FIFO implements Queue {
         String output = "Queue: ";
         for (int i = 0; i < size(); i++) {
 
-            output += "(" + String.valueOf(queue.get(i)) + ") "; // queue.get(i) istället för i?
+            output += "(" + String.valueOf(queue.get(i)) + ") ";
         }
 
         return output;

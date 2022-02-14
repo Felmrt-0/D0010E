@@ -1,13 +1,13 @@
 import java.util.NoSuchElementException;
-import java.io.*;
+import java.io.IOException;
+import java.io.File;
 import java.util.Scanner;
 
 public class GraphIO {
 
     private static int[] x;
 
-    static public void readFile(Graph g, String filename) {
-        System.out.print(filename);
+    static public void readFile(Graph g, String filename) throws IOException {
 
         File data = new File(filename);
         Scanner scan = null;
@@ -15,15 +15,16 @@ public class GraphIO {
         try {
             scan = new Scanner(data);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new IOException();
         }
+
         int lines = scan.nextInt();
 
-        for(int i = 0; i < lines; i++){
+        for (int i = 0; i < lines; i++) {
             g.addNode(scan.nextInt(), scan.nextInt(), scan.nextInt());
         }
 
-        while(scan.hasNext()){
+        while (scan.hasNext()) {
             g.addEdge(scan.nextInt(), scan.nextInt(), scan.nextInt());
         }
 
