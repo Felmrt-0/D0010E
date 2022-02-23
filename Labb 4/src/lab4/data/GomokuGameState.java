@@ -12,7 +12,7 @@ import lab4.client.GomokuClient;
  * Represents the state of a game
  */
 
-public class GomokuGameState extends Observable implements Observer{
+public class GomokuGameState extends Observable implements Observer {
 
     // Game variables
     private final int DEFAULT_SIZE = 15;
@@ -20,6 +20,9 @@ public class GomokuGameState extends Observable implements Observer{
 
     //Possible game states
     private final int NOT_STARTED = 0;
+    private final int MY_TURN = 1;
+    private final int OTHER_TURN = 2;
+    private final int FINISHED = 3;
     private int currentState;
 
     private GomokuClient client;
@@ -31,7 +34,7 @@ public class GomokuGameState extends Observable implements Observer{
      *
      * @param gc The client used to communicate with the other player
      */
-    public GomokuGameState(GomokuClient gc){
+    public GomokuGameState(GomokuClient gc) {
         client = gc;
         client.addObserver(this);
         gc.setGameState(this);
@@ -45,14 +48,16 @@ public class GomokuGameState extends Observable implements Observer{
      *
      * @return the message string
      */
-    public String getMessageString(){}
+    public String getMessageString() {
+    }
 
     /**
      * Returns the game grid
      *
      * @return the game grid
      */
-    public GameGrid getGameGrid(){}
+    public GameGrid getGameGrid() {
+    }
 
     /**
      * This player makes a move at a specified location
@@ -60,29 +65,76 @@ public class GomokuGameState extends Observable implements Observer{
      * @param x the x coordinate
      * @param y the y coordinate
      */
-    public void move(int x, int y){}
+    public void move(int x, int y) {
+        switch (currentState) {
+            case NOT_STARTED:
+                message = "No game in progress.";
+                break;
+            case MY_TURN:
+                if (gameGrid.move(x,y,gameGrid.ME)) {
+                    if (gameGrid.isWinner(gameGrid.ME)) {
+                        message = "You win.";
+                        client.sendMoveMessage(x, y);
+                        currentState = FINISHED;
+                    } else {
+                        currentState = OTHER_TURN;
+                        client.sendMoveMessage(x, y);
+                        message = "Opponents turn.";
+                    }
+                }else{
+                    message = "That move is not allowed.";
+                }
+                break;
+            case OTHER_TURN:
+                message = "It is not your turn.";
+                break;
+            case FINISHED:
+                message = "Game is finished. Start another game.";
+                break;
+            default:
+                message = "Something went wrong.";
+                break;
+        }
+        setChanged();
+        notifyObservers();
+    }
 
     /**
      * Starts a new game with the current client
      */
-    public void newGame(){}
+    public void newGame() {
+    }
 
     /**
      * Other player has requested a new game, so the
      * game state is changed accordingly
      */
-    public void receivedNewGame(){}
+    public void receivedNewGame() {
+    }
 
     /**
      * The connection to the other player is lost,
      * so the game is interrupted
      */
-    public void otherGuyLeft(){}
+    public void otherGuyLeft() {
+        gameGrid.clearGrid();
+        message = "The other player has disconnected from the game.";
+        currentState = NOT_STARTED;
+        setChanged();
+        notifyObservers();
+    }
 
     /**
      * The player disconnects from the client
      */
-    public void disconnect(){}
+    public void disconnect() {
+        gameGrid.clearGrid();
+        message = "You have disconnected from the game.";
+        currentState = NOT_STARTED;
+        setChanged();
+        notifyObservers();
+        client.disconnect();
+    }
 
     /**
      * The player receives a move from the other player
@@ -90,11 +142,12 @@ public class GomokuGameState extends Observable implements Observer{
      * @param x The x coordinate of the move
      * @param y The y coordinate of the move
      */
-    public void receivedMove(int x, int y){}
+    public void receivedMove(int x, int y) {
+    }
 
     public void update(Observable o, Object arg) {
 
-        switch(client.getConnectionStatus()){
+        switch (client.getConnectionStatus()) {
             case GomokuClient.CLIENT:
                 message = "Game started, it is your turn!";
                 currentState = MY_TURN;
