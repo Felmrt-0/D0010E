@@ -1,8 +1,12 @@
 package lab4;
 
+import lab4.client.GomokuClient;
 import lab4.data.GomokuGameState;
 import lab4.gui.GomokuGUI;
-
+/**
+ * Main class
+ * @author Johnny Lam
+ */
 public class GomokuMain {
     public static void main(String[] args) {
         int port = 4000;
