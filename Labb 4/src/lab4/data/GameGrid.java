@@ -19,6 +19,12 @@ public class GameGrid extends Observable {
      * @param size The width/height of the game grid
      */
     public GameGrid(int size) {
+        board = new int[size][size];
+        for (int i = 0; i < getSize(); i++) {
+            for (int j = 0; j < getSize(); j++) {
+                board[i][j] = EMPTY;
+            }
+        }
     }
 
     /**
@@ -87,8 +93,10 @@ public class GameGrid extends Observable {
      * @param player the player to check for
      * @return true if player has 5 in row, false otherwise
      */
-    public boolean isWinner(int player) {
-        if ()
+    public boolean isWinner(int player) { //TODO
+
+
+        return false;
     }
 
 
