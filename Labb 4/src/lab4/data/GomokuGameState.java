@@ -107,7 +107,7 @@ public class GomokuGameState extends Observable implements Observer {
      * Starts a new game with the current client
      */
     public void newGame() {
-        if (currentState == MY_TURN || currentState == OTHER_TURN) {
+        if (currentState == FINISHED || currentState == NOT_STARTED) {
             return;
         } else {
             gameGrid.clearGrid();
@@ -166,12 +166,12 @@ public class GomokuGameState extends Observable implements Observer {
         if (gameGrid.isWinner(gameGrid.OTHER)) {
             message = "Opponent won!";
             currentState = FINISHED;
-            setChanged();
-            notifyObservers();
         } else {
             currentState = MY_TURN;
             message = "Your turn.";
         }
+        setChanged();
+        notifyObservers();
     }
 
     public void update(Observable o, Object arg) {
