@@ -65,6 +65,8 @@ public class GameGrid extends Observable{
 	public boolean move(int x, int y, int player){
         if (getLocation(x, y) == EMPTY) {
             gridArray[x][y] = player;
+            setChanged();
+            notifyObservers();
             return true;
         }else {
             return false;
@@ -80,6 +82,8 @@ public class GameGrid extends Observable{
                 gridArray[i][j]= EMPTY;
             }
         }
+        setChanged();
+        notifyObservers();
     }
 	
 	/**
