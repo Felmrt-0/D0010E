@@ -19,6 +19,10 @@ public class GomokuMain {
         GomokuClient client = new GomokuClient(port);
         GomokuGameState gameState = new GomokuGameState(client);
         GomokuGUI gui = new GomokuGUI(gameState, client);
+        port = 4001;
+        GomokuClient client2 = new GomokuClient(port);
+        GomokuGameState gameState2 = new GomokuGameState(client2);
+        GomokuGUI gui2 = new GomokuGUI(gameState2, client2);
 
     }
 }
