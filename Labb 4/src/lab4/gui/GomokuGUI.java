@@ -10,12 +10,14 @@ import java.util.Observer;
 import lab4.client.GomokuClient;
 import lab4.data.GameGrid;
 import lab4.data.GomokuGameState;
+import javax.swing.JPanel;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JButton;
 
-import javax.swing.*;
 
-import static java.awt.Component.CENTER_ALIGNMENT;
-
-/*
+/**
+ * @author Felix Mårtensson och Johnny Lam
  * The GUI class
  */
 
@@ -24,6 +26,7 @@ public class GomokuGUI implements Observer {
     private GomokuClient client;
     private GomokuGameState gamestate;
     private JFrame gui;
+    private JPanel panel;
     private JLabel messageLabel;
     private JButton connectButton, newGameButton, disconnectButton;
     private GamePanel gameGridPanel;
@@ -44,6 +47,7 @@ public class GomokuGUI implements Observer {
         //Creates a new JFrame and makes close operation to close the window and kill the process
         gui = new JFrame("Gomoku");
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        panel = new JPanel();
 
         messageLabel = new JLabel("Gomoku");
 
@@ -78,28 +82,16 @@ public class GomokuGUI implements Observer {
             }
         });
 
+        panel.add(gameGridPanel);
+        panel.add(connectButton);
+        panel.add(newGameButton);
+        panel.add(disconnectButton);
+        panel.add(messageLabel);
+
+        gui.setSize(gamestate.DEFAULT_SIZE*GamePanel.UNIT_SIZE+50, gamestate.DEFAULT_SIZE*GamePanel.UNIT_SIZE+100);
+        gui.add(panel);
         gui.setVisible(true);
-        Box vertical = Box.createVerticalBox();
-        Box horizontal = Box.createHorizontalBox();
-        Box message = Box.createHorizontalBox();
-
-        //Add grid panel and message label
-        vertical.add(gameGridPanel);
-        message.add(messageLabel);
-
-        //Align to center and add buttons
-        horizontal.setAlignmentX(CENTER_ALIGNMENT);
-        horizontal.add(connectButton);
-        horizontal.add(newGameButton);
-        horizontal.add(disconnectButton);
-
-        //Add buttons and message label to vertical box
-        vertical.add(horizontal);
-        vertical.add(message);
-
-
-        gui.getContentPane().add(vertical);
-        gui.setSize(vertical.getPreferredSize().width + 50, vertical.getPreferredSize().height + horizontal.getPreferredSize().height + 50);
+        gui.setResizable(false);
 
         newGameButton.setEnabled(false);
         disconnectButton.setEnabled(false);

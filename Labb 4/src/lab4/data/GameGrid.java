@@ -3,6 +3,7 @@ package lab4.data;
 import java.util.Observable;
 
 /**
+ * @author Felix Mårtensson och Johnny Lam
  * Represents the 2-d game grid
  */
 
@@ -51,7 +52,7 @@ public class GameGrid extends Observable{
 	 * @return the grid size
 	 */
 	public int getSize(){
-        return gridArray.length + 1;
+        return gridArray.length;
     }
 	
 	/**

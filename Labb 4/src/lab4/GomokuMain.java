@@ -5,7 +5,7 @@ import lab4.data.GomokuGameState;
 import lab4.gui.GomokuGUI;
 /**
  * Main class
- * @author Johnny Lam
+ * @author Felix Mårtensson och Johnny Lam
  */
 public class GomokuMain {
     public static void main(String[] args) {

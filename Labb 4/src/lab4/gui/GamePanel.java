@@ -11,12 +11,13 @@ import javax.swing.JPanel;
 import lab4.data.GameGrid;
 
 /**
+ * @author Felix Mårtensson och Johnny Lam
  * A panel providing a graphical view of the game board
  */
 
 public class GamePanel extends JPanel implements Observer{
 
-    private final int UNIT_SIZE = 20;
+    static final int UNIT_SIZE = 20;
     private GameGrid grid;
 
     /**

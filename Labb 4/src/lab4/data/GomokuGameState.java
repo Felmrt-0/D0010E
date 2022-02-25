@@ -11,13 +11,15 @@ import lab4.client.GomokuClient;
 import javax.print.attribute.standard.MediaSize;
 
 /**
+ * @author Felix Mårtensson och Johnny Lam
+ *
  * Represents the state of a game
  */
 
 public class GomokuGameState extends Observable implements Observer {
 
     // Game variables
-    private final int DEFAULT_SIZE = 15;
+    public final int DEFAULT_SIZE = 15;
     private GameGrid gameGrid;
 
     //Possible game states
@@ -126,7 +128,7 @@ public class GomokuGameState extends Observable implements Observer {
     public void receivedNewGame() {
         gameGrid.clearGrid();
         currentState = MY_TURN;
-        message = "Your turn.";
+        message = "Opponent started a new game started, it is your turn.";
         setChanged();
         notifyObservers();
     }
