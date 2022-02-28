@@ -10,9 +10,9 @@ public class GameGrid extends Observable{
 
     int[][] gridArray;
     int INROW = 5;
-    public static int EMPTY;
-    public static int ME;
-    public static int OTHER;
+    public final int EMPTY = 0;
+    public final int ME = 1;
+    public final int OTHER = 2;
 
 	
 	/**
@@ -163,7 +163,6 @@ public class GameGrid extends Observable{
 			int diagonalL = 1;
 			newJ = 0;
 			newI = 0;
-			looperino:
 			for(int i = 0; i<gridArray.length-INROW; i++) {
 				for (int j = gridArray.length-1 ; j > INROW; j--) {
 					newJ = j;
