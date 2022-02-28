@@ -48,14 +48,46 @@ public class GamePanel extends JPanel implements Observer{
         pos[1] = y/UNIT_SIZE;
         return pos;
     }
-
+    /** 
+     * 	
+     */
     public void update(Observable arg0, Object arg1) {
         this.repaint();
     }
-
+    /**
+     * 
+     */
     public void paintComponent(Graphics g){ //TODO
         super.paintComponent(g);
-
+        drawBoard(g);
+        drawPlayers(g);
     }
-
+    /**
+     * 
+     */
+    private void drawBoard(Graphics g){
+    	int size = grid.getSize();
+    	g.setColor(Color.black);
+    	for(int i = 0; i<size+1; i++) {
+    		g.drawLine(i*10, 0, i*10, size*10); // vert
+    		g.drawLine(0, i*10, 0, size*10); // hori
+    	}
+    }
+    /**
+     * 
+     */
+    private void drawPlayers(Graphics g){
+    	int size = grid.getSize();
+    	for(int i = 0; i<size; i++) {
+    		for(int j = 0; j<size; j++) {
+    			if (grid.getLocation(i, j)== 1) {
+    				g.setColor(Color.black);
+    				g.fillOval(i*10, j*10, 10, 10);
+    			}else if(grid.getLocation(i, j)== 2) {
+    				g.setColor(Color.red);
+    				g.fillOval(i*10, j*10, 10, 10);
+    			}
+    		}
+    	}
+    }
 }
