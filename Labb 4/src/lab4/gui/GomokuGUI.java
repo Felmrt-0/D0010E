@@ -91,7 +91,7 @@ public class GomokuGUI implements Observer {
         gui.setSize(gamestate.DEFAULT_SIZE*GamePanel.UNIT_SIZE+50, gamestate.DEFAULT_SIZE*GamePanel.UNIT_SIZE+100);
         gui.add(panel);
         gui.setVisible(true);
-        gui.setResizable(false);
+        gui.setResizable(true);
 
         newGameButton.setEnabled(false);
         disconnectButton.setEnabled(false);
