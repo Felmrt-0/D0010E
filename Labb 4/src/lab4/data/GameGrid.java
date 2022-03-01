@@ -134,12 +134,13 @@ public class GameGrid extends Observable{
 			int diagonalR = 1;
 			int newJ;
 			int newI;
-			for(int i = 0; i<gridArray.length-INROW; i++) {
-				for (int j = 0; j < gridArray.length-INROW; j++) {
+			for(int i = 0; i<gridArray.length-1; i++) {
+				for (int j = 0; j < gridArray.length-1; j++) {
 					newJ = j;
 					newI = i;
 					for(int a = 0; a<INROW; a++) {
 						if(gridArray[i][j] == player) {
+							try {
 							if (gridArray[i][j] != EMPTY && (gridArray[i][j] == gridArray[i + 1][j + 1])) {
 								diagonalR++;
 								i++;
@@ -155,6 +156,12 @@ public class GameGrid extends Observable{
 								break winnerLoop;
 
 							}
+							}catch(Exception ArrayIndexOutOfBoundsException) {
+								i = newI;
+								j = newJ;
+								diagonalR = 1;
+								break;
+							}
 						}
 					}
 				}
@@ -168,26 +175,33 @@ public class GameGrid extends Observable{
 			int diagonalL = 1;
 			newJ = 0;
 			newI = 0;
-			for(int i = 0; i<gridArray.length-INROW; i++) {
-				for (int j = gridArray.length-1 ; j > INROW; j--) {
+			for(int i = 0; i<gridArray.length; i++) {
+				for (int j = gridArray.length-1; j > 0; j--) {
 					newJ = j;
 					newI = i;
 					for(int a = 0; a<INROW; a++) {
 						if(gridArray[i][j] == player) {
-							if (gridArray[i][j] != EMPTY && (gridArray[i][j] == gridArray[i + 1][j - 1])) {
-								diagonalL++;
-								i++;
-								j--;
-							} else {
+							try {
+								if (gridArray[i][j] != EMPTY && (gridArray[i][j] == gridArray[i + 1][j - 1])) {
+									diagonalL++;
+									i++;
+									j--;
+								} else {
+									i = newI;
+									j = newJ;
+									diagonalL = 1;
+									break;
+								}
+								if (diagonalL == INROW) {
+									System.out.println(diagonalL);
+									break winnerLoop;
+
+								}
+							}catch(Exception ArrayIndexOutOfBoundsException) {
 								i = newI;
 								j = newJ;
 								diagonalL = 1;
 								break;
-							}
-							if (diagonalL == INROW) {
-								System.out.println(diagonalL);
-								break winnerLoop;
-
 							}
 						}
 					}
