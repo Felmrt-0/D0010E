@@ -1,5 +1,5 @@
-/*
- * Created on 2007 feb 8
+/**
+ * This package contains the necessary code for the data and logic. Eg. figuring out if player wins or not etc.
  */
 package lab4.data;
 
@@ -11,14 +11,16 @@ import lab4.client.GomokuClient;
 import javax.print.attribute.standard.MediaSize;
 
 /**
- * @author Felix Mårtensson och Johnny Lam
- *
  * Represents the state of a game
+ * @author Felix Martensson och Johnny Lam
  */
 
 public class GomokuGameState extends Observable implements Observer {
 
     // Game variables
+    /**
+     * Number of rows in a board.
+     */
     public final int DEFAULT_SIZE = 15;
     private GameGrid gameGrid;
 
@@ -66,7 +68,9 @@ public class GomokuGameState extends Observable implements Observer {
     }
 
     /**
-     * This player makes a move at a specified location
+     * This player makes a move at a specified location.
+     * Checks if the game is active first, then if the who's turn it is.
+     * Then checks if move is legal and if it is a winning move.
      *
      * @param x the x coordinate
      * @param y the y coordinate
@@ -157,7 +161,7 @@ public class GomokuGameState extends Observable implements Observer {
     }
 
     /**
-     * The player receives a move from the other player
+     * The player receives a move from the other player. Also checks if that move wins the game for opponent.
      *
      * @param x The x coordinate of the move
      * @param y The y coordinate of the move
@@ -175,6 +179,11 @@ public class GomokuGameState extends Observable implements Observer {
         notifyObservers();
     }
 
+    /**
+     * Changes who's turn it is on connection.
+     * @param o
+     * @param arg
+     */
     public void update(Observable o, Object arg) {
 
         switch (client.getConnectionStatus()) {

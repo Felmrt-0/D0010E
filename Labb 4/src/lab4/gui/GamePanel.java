@@ -1,3 +1,6 @@
+/**
+ * This package contains the necessary code for the GUI. Eg. creating the window, buttons, game grid and player moves.
+ */
 package lab4.gui;
 
 import java.awt.Color;
@@ -11,12 +14,15 @@ import javax.swing.JPanel;
 import lab4.data.GameGrid;
 
 /**
- * @author Felix Mårtensson och Johnny Lam
  * A panel providing a graphical view of the game board
+ * @author Felix Martensson och Johnny Lam
  */
 
 public class GamePanel extends JPanel implements Observer {
 
+    /**
+     * Size of a square in a grid
+     */
     static final int UNIT_SIZE = 20;
     private GameGrid grid;
 
@@ -50,23 +56,27 @@ public class GamePanel extends JPanel implements Observer {
     }
 
     /**
-     *
+     * Repaints the grid when program updates
+     * @param arg0
+     * @param arg1
      */
     public void update(Observable arg0, Object arg1) {
         this.repaint();
     }
 
     /**
-     *
+     * Generates the board and player moves
+     * @param g
      */
-    public void paintComponent(Graphics g) { //TODO
+    public void paintComponent(Graphics g) {
         super.paintComponent(g);
         drawBoard(g);
         drawPlayers(g);
     }
 
     /**
-     *
+     * Draws the game board
+     * @param g
      */
     private void drawBoard(Graphics g) {
         int size = grid.getSize();
@@ -78,7 +88,8 @@ public class GamePanel extends JPanel implements Observer {
     }
 
     /**
-     *
+     * Draws the player's moves
+     * @param g
      */
     private void drawPlayers(Graphics g) {
         int size = grid.getSize();

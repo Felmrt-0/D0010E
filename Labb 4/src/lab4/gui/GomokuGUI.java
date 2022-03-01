@@ -1,3 +1,6 @@
+/**
+ * This package contains the necessary code for the GUI. Eg. creating the window, buttons, game grid and player moves.
+ */
 package lab4.gui;
 
 import java.awt.event.ActionEvent;
@@ -17,8 +20,8 @@ import javax.swing.JButton;
 
 
 /**
- * @author Felix Mårtensson och Johnny Lam
  * The GUI class
+ * @author Felix Martensson och Johnny Lam
  */
 
 public class GomokuGUI implements Observer {
@@ -34,7 +37,7 @@ public class GomokuGUI implements Observer {
 
     /**
      * The constructor
-     *
+     * This creates the window and buttons for the game.
      * @param g The game state that the GUI will visualize
      * @param c The client that is responsible for the communication
      */

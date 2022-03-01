@@ -1,18 +1,37 @@
+/**
+ * This package contains the necessary code for the data and logic. Eg. figuring out if player wins or not etc.
+ */
+
 package lab4.data;
 
 import java.util.Observable;
 
 /**
- * @author Felix Mårtensson och Johnny Lam
  * Represents the 2-d game grid
+ * @author Felix Martensson och Johnny Lam
  */
 
 public class GameGrid extends Observable{
 
+	/**
+	 * 2D array of integers representing the board.
+	 */
     int[][] gridArray;
+	/**
+	 * How many squares in a row to win.
+	 */
     int INROW = 5;
+	/**
+	 * Represents an empty square
+	 */
     public final int EMPTY = 0;
+	/**
+	 * Represents a square occupied by player
+	 */
     public final int ME = 1;
+	/**
+	 * Represents a square occupied by the opponent
+	 */
     public final int OTHER = 2;
 
 	
@@ -88,7 +107,7 @@ public class GameGrid extends Observable{
     }
 	
 	/**
-	 * Check if a player has 5 in row
+	 * Check if a player has INROW in row
 	 * 
 	 * @param player the player to check for
 	 * @return true if player has 5 in row, false otherwise
