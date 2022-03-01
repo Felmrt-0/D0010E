@@ -200,7 +200,7 @@ public class GameGrid extends Observable{
 							}catch(Exception ArrayIndexOutOfBoundsException) {
 								i = newI;
 								j = newJ;
-								diagonalR = 1;
+								diagonalL = 1;
 								break;
 							}
 						}
