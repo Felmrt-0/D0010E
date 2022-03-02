@@ -15,6 +15,7 @@ import lab4.data.GameGrid;
 
 /**
  * A panel providing a graphical view of the game board
+ *
  * @author Felix Martensson och Johnny Lam
  */
 
@@ -23,7 +24,7 @@ public class GamePanel extends JPanel implements Observer {
     /**
      * Size of a square in a grid
      */
-    static final int UNIT_SIZE = 20;
+    static final int UNIT_SIZE = 25;
     private GameGrid grid;
 
     /**
@@ -57,6 +58,7 @@ public class GamePanel extends JPanel implements Observer {
 
     /**
      * Repaints the grid when program updates
+     *
      * @param arg0
      * @param arg1
      */
@@ -66,6 +68,7 @@ public class GamePanel extends JPanel implements Observer {
 
     /**
      * Generates the board and player moves
+     *
      * @param g
      */
     public void paintComponent(Graphics g) {
@@ -76,6 +79,7 @@ public class GamePanel extends JPanel implements Observer {
 
     /**
      * Draws the game board
+     *
      * @param g
      */
     private void drawBoard(Graphics g) {
@@ -89,6 +93,7 @@ public class GamePanel extends JPanel implements Observer {
 
     /**
      * Draws the player's moves
+     *
      * @param g
      */
     private void drawPlayers(Graphics g) {

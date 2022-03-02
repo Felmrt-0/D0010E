@@ -3,6 +3,7 @@
  */
 package lab4.gui;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -13,7 +14,8 @@ import java.util.Observer;
 import lab4.client.GomokuClient;
 import lab4.data.GameGrid;
 import lab4.data.GomokuGameState;
-import javax.swing.JPanel;
+
+import javax.swing.Box;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -21,6 +23,7 @@ import javax.swing.JButton;
 
 /**
  * The GUI class
+ *
  * @author Felix Martensson och Johnny Lam
  */
 
@@ -29,7 +32,6 @@ public class GomokuGUI implements Observer {
     private GomokuClient client;
     private GomokuGameState gamestate;
     private JFrame gui;
-    private JPanel panel;
     private JLabel messageLabel;
     private JButton connectButton, newGameButton, disconnectButton;
     private GamePanel gameGridPanel;
@@ -38,6 +40,7 @@ public class GomokuGUI implements Observer {
     /**
      * The constructor
      * This creates the window and buttons for the game.
+     *
      * @param g The game state that the GUI will visualize
      * @param c The client that is responsible for the communication
      */
@@ -50,7 +53,6 @@ public class GomokuGUI implements Observer {
         //Creates a new JFrame and makes close operation to close the window and kill the process
         gui = new JFrame("Gomoku");
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        panel = new JPanel();
 
         messageLabel = new JLabel("Gomoku");
 
@@ -85,16 +87,26 @@ public class GomokuGUI implements Observer {
             }
         });
 
-        panel.add(gameGridPanel);
-        panel.add(connectButton);
-        panel.add(newGameButton);
-        panel.add(disconnectButton);
-        panel.add(messageLabel);
+        Box vertical = Box.createVerticalBox();
+        Box horizontal = Box.createHorizontalBox();
 
-        gui.setSize(gamestate.DEFAULT_SIZE*GamePanel.UNIT_SIZE+50, gamestate.DEFAULT_SIZE*GamePanel.UNIT_SIZE+100);
-        gui.add(panel);
+        //Adds the game board
+        vertical.add(gameGridPanel);
+
+        //Puts the buttons in a horizontal box
+        horizontal.add(connectButton);
+        horizontal.add(newGameButton);
+        horizontal.add(disconnectButton);
+
+        //Adds the horizontal box to the vertical box, and then adds message label under the horizontal box.
+        vertical.add(horizontal);
+        vertical.add(messageLabel);
+
+        //add the box to the frame and makes it visible.
+        gui.add(vertical);
         gui.setVisible(true);
-        gui.setResizable(true);
+        //Pack() sizes the window to fit preferred size and layouts of its subcomponents.
+        gui.pack();
 
         newGameButton.setEnabled(false);
         disconnectButton.setEnabled(false);

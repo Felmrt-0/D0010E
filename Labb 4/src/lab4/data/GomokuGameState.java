@@ -12,6 +12,7 @@ import javax.print.attribute.standard.MediaSize;
 
 /**
  * Represents the state of a game
+ *
  * @author Felix Martensson och Johnny Lam
  */
 
@@ -116,7 +117,7 @@ public class GomokuGameState extends Observable implements Observer {
             return;
         } else {
             gameGrid.clearGrid();
-            currentState= OTHER_TURN;
+            currentState = OTHER_TURN;
             message = "Opponent's turn.";
             client.sendNewGameMessage();
             setChanged();
@@ -181,6 +182,7 @@ public class GomokuGameState extends Observable implements Observer {
 
     /**
      * Changes who's turn it is on connection.
+     *
      * @param o
      * @param arg
      */
